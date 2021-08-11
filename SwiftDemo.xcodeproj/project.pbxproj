@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		8AD340D226C2520A001C0574 /* SensitiveWordFiltration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AD340D126C2520A001C0574 /* SensitiveWordFiltration.swift */; };
 		8AD340D626C28752001C0574 /* 敏感词.txt in Resources */ = {isa = PBXBuildFile; fileRef = 8AD340D526C28752001C0574 /* 敏感词.txt */; };
+		8AE6FD5326C360FD00517764 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AE6FD5226C360FC00517764 /* UIViewExtension.swift */; };
+		8AE6FD5926C3641B00517764 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AE6FD5826C3641B00517764 /* StringExtension.swift */; };
 		8AF9ADCA26C1380F00DD1DA6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AF9ADC926C1380F00DD1DA6 /* AppDelegate.swift */; };
 		8AF9ADCC26C1380F00DD1DA6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AF9ADCB26C1380F00DD1DA6 /* SceneDelegate.swift */; };
 		8AF9ADCE26C1380F00DD1DA6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AF9ADCD26C1380F00DD1DA6 /* ViewController.swift */; };
@@ -20,6 +22,8 @@
 /* Begin PBXFileReference section */
 		8AD340D126C2520A001C0574 /* SensitiveWordFiltration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SensitiveWordFiltration.swift; sourceTree = "<group>"; };
 		8AD340D526C28752001C0574 /* 敏感词.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "敏感词.txt"; sourceTree = "<group>"; };
+		8AE6FD5226C360FC00517764 /* UIViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
+		8AE6FD5826C3641B00517764 /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		8AF9ADC626C1380F00DD1DA6 /* SwiftDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8AF9ADC926C1380F00DD1DA6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8AF9ADCB26C1380F00DD1DA6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -41,6 +45,49 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8AE6FD5426C362F900517764 /* UIKit */ = {
+			isa = PBXGroup;
+			children = (
+				8AE6FD5526C3630500517764 /* Extension */,
+			);
+			path = UIKit;
+			sourceTree = "<group>";
+		};
+		8AE6FD5526C3630500517764 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				8AE6FD5226C360FC00517764 /* UIViewExtension.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		8AE6FD5626C3633400517764 /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				8AF9ADC926C1380F00DD1DA6 /* AppDelegate.swift */,
+				8AF9ADCB26C1380F00DD1DA6 /* SceneDelegate.swift */,
+				8AF9ADCD26C1380F00DD1DA6 /* ViewController.swift */,
+			);
+			path = Other;
+			sourceTree = "<group>";
+		};
+		8AE6FD5726C363FF00517764 /* Foundation */ = {
+			isa = PBXGroup;
+			children = (
+				8AD340D126C2520A001C0574 /* SensitiveWordFiltration.swift */,
+				8AE6FD5A26C3643E00517764 /* Extension */,
+			);
+			path = Foundation;
+			sourceTree = "<group>";
+		};
+		8AE6FD5A26C3643E00517764 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				8AE6FD5826C3641B00517764 /* StringExtension.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
 		8AF9ADBD26C1380F00DD1DA6 = {
 			isa = PBXGroup;
 			children = (
@@ -60,10 +107,9 @@
 		8AF9ADC826C1380F00DD1DA6 /* SwiftDemo */ = {
 			isa = PBXGroup;
 			children = (
-				8AF9ADC926C1380F00DD1DA6 /* AppDelegate.swift */,
-				8AF9ADCB26C1380F00DD1DA6 /* SceneDelegate.swift */,
-				8AF9ADCD26C1380F00DD1DA6 /* ViewController.swift */,
-				8AD340D126C2520A001C0574 /* SensitiveWordFiltration.swift */,
+				8AE6FD5726C363FF00517764 /* Foundation */,
+				8AE6FD5426C362F900517764 /* UIKit */,
+				8AE6FD5626C3633400517764 /* Other */,
 				8AD340D526C28752001C0574 /* 敏感词.txt */,
 				8AF9ADCF26C1380F00DD1DA6 /* Main.storyboard */,
 				8AF9ADD226C1381200DD1DA6 /* Assets.xcassets */,
@@ -144,7 +190,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8AE6FD5326C360FD00517764 /* UIViewExtension.swift in Sources */,
 				8AF9ADCE26C1380F00DD1DA6 /* ViewController.swift in Sources */,
+				8AE6FD5926C3641B00517764 /* StringExtension.swift in Sources */,
 				8AF9ADCA26C1380F00DD1DA6 /* AppDelegate.swift in Sources */,
 				8AD340D226C2520A001C0574 /* SensitiveWordFiltration.swift in Sources */,
 				8AF9ADCC26C1380F00DD1DA6 /* SceneDelegate.swift in Sources */,
@@ -176,15 +224,6 @@
 		8AF9ADD826C1381200DD1DA6 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-                OTHER_LDFLAGS = (
-                    "-Xlinker",
-                    "-interposable",
-                    "-Xlinker",
-                    "-undefined",
-                    "-Xlinker",
-                    dynamic_lookup,
-                );
-                ENABLE_BITCODE = NO;
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
@@ -217,6 +256,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_BITCODE = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
@@ -237,6 +277,14 @@
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				OTHER_LDFLAGS = (
+					"-Xlinker",
+					"-interposable",
+					"-Xlinker",
+					"-undefined",
+					"-Xlinker",
+					dynamic_lookup,
+				);
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -301,27 +349,27 @@
 		8AF9ADDB26C1381200DD1DA6 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-                OTHER_LDFLAGS = (
-                    "-Xlinker",
-                    "-interposable",
-                    "-Xlinker",
-                    "-undefined",
-                    "-Xlinker",
-                    dynamic_lookup,
-                );
-                ENABLE_BITCODE = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = SwiftDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				OTHER_LDFLAGS = (
+					"-Xlinker",
+					"-interposable",
+					"-Xlinker",
+					"-undefined",
+					"-Xlinker",
+					dynamic_lookup,
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.yxc.SwiftDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -339,7 +387,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.yxc.SwiftDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
