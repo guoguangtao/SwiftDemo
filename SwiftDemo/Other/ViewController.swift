@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SnapKit
 
 
 class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
@@ -13,8 +14,6 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     // MARK: - Property
     private lazy var tableView: UITableView = {
         let tableView = UITableView()
-        
-        tableView.frame = self.view.bounds
         tableView.backgroundColor = UIColor.systemBackground
         tableView.dataSource = self
         tableView.delegate = self
@@ -36,6 +35,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         super.viewDidLoad()
         
         setupUI()
+        setupConstraints()
         setupNavigation()
     }
     
@@ -110,6 +110,9 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     func setupConstraints() {
         
+        tableView.snp.makeConstraints { (make) -> Void in
+            make.edges.equalTo(self.view)
+        }
     }
     
     // MARK: - Class
