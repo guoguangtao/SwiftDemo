@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -52,11 +52,28 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8A56E24626C66AD30070F0F9 /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+				8AE6FD5726C363FF00517764 /* Foundation */,
+				8AE6FD5426C362F900517764 /* UIKit */,
+			);
+			path = Tools;
+			sourceTree = "<group>";
+		};
+		8A56E24726C66AE60070F0F9 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				8AF9ADCD26C1380F00DD1DA6 /* ViewController.swift */,
+				8AE6FD5C26C371E800517764 /* UIButtonController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
 		8AE6FD5426C362F900517764 /* UIKit */ = {
 			isa = PBXGroup;
 			children = (
 				8AE6FD5526C3630500517764 /* Extension */,
-				8AE6FD5C26C371E800517764 /* UIButtonController.swift */,
 			);
 			path = UIKit;
 			sourceTree = "<group>";
@@ -74,7 +91,6 @@
 			children = (
 				8AF9ADC926C1380F00DD1DA6 /* AppDelegate.swift */,
 				8AF9ADCB26C1380F00DD1DA6 /* SceneDelegate.swift */,
-				8AF9ADCD26C1380F00DD1DA6 /* ViewController.swift */,
 			);
 			path = Other;
 			sourceTree = "<group>";
@@ -117,8 +133,8 @@
 		8AF9ADC826C1380F00DD1DA6 /* SwiftDemo */ = {
 			isa = PBXGroup;
 			children = (
-				8AE6FD5726C363FF00517764 /* Foundation */,
-				8AE6FD5426C362F900517764 /* UIKit */,
+				8A56E24726C66AE60070F0F9 /* Controller */,
+				8A56E24626C66AD30070F0F9 /* Tools */,
 				8AE6FD5626C3633400517764 /* Other */,
 				8AD340D526C28752001C0574 /* 敏感词.txt */,
 				8AF9ADCF26C1380F00DD1DA6 /* Main.storyboard */,
@@ -143,7 +159,6 @@
 				9933B4830AB54860333A4E16 /* Pods-SwiftDemo.debug.xcconfig */,
 				C9B66C5B325E4E29F045E229 /* Pods-SwiftDemo.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
