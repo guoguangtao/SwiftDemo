@@ -24,7 +24,8 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     private lazy var dataSources: [YXCItemModel] = {
         var array: [YXCItemModel] = [
-            YXCItemModel(titleString: "UIButton", pushViewController: "UIButtonController", parameter: nil)
+            YXCItemModel(titleString: "UIButton", pushViewController: "UIButtonController", parameter: nil),
+            YXCItemModel(titleString: "UILabel", pushViewController: "UILabelController", parameter: nil)
         ]
         return array
     }()
@@ -73,6 +74,9 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     // MARK: - UITableViewDelegate
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        tableView.deselectRow(at: indexPath, animated: true)
+        
         guard let nameSpace = Bundle.main.infoDictionary!["CFBundleExecutable"] as? String else {
             print("没有获取到命名空间")
             return
