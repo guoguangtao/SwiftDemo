@@ -6,21 +6,32 @@
 //
 
 import UIKit
+import Then
 
 class UILabelController: UIViewController {
 
     
     // MARK: - Property
-    let label: UILabel = {
-        let label = UILabel()
-        label.font = UIFont.systemFont(ofSize: 15)
-        label.textColor = UIColor.systemOrange
-        label.numberOfLines = 0
-        label.textAlignment = NSTextAlignment.center
-        label.text = "这是一个 Label";
-        
-        return label
-    }()
+//    let label: UILabel = {
+//        let label = UILabel()
+//        label.font = UIFont.systemFont(ofSize: 15)
+//        label.textColor = UIColor.systemOrange
+//        label.numberOfLines = 0
+//        label.textAlignment = NSTextAlignment.center
+//        label.text = "这是一个 Label";
+//
+//        return label
+//    }()
+    
+    
+    /// 创建一个 Label，使用第三方 Then 的方式去创建
+    let label = UILabel().then {
+        $0.font = UIFont.systemFont(ofSize: 15)
+        $0.textColor = UIColor.systemOrange
+        $0.numberOfLines = 0
+        $0.textAlignment = NSTextAlignment.center
+        $0.text = "这是一个 Label"
+    }
     
     
     // MARK: - 懒加载
