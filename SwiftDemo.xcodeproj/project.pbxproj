@@ -19,6 +19,7 @@
 		8AF9ADD126C1380F00DD1DA6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8AF9ADCF26C1380F00DD1DA6 /* Main.storyboard */; };
 		8AF9ADD326C1381200DD1DA6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8AF9ADD226C1381200DD1DA6 /* Assets.xcassets */; };
 		8AF9ADD626C1381200DD1DA6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8AF9ADD426C1381200DD1DA6 /* LaunchScreen.storyboard */; };
+		8EFCB55526C6A6B20051C926 /* UICollectionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EFCB55426C6A6B20051C926 /* UICollectionController.swift */; };
 		DA202EE65D03CBEAACF1CFF3 /* Pods_SwiftDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8C383001B93D23BB8F0B781 /* Pods_SwiftDemo.framework */; };
 /* End PBXBuildFile section */
 
@@ -37,6 +38,7 @@
 		8AF9ADD226C1381200DD1DA6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8AF9ADD526C1381200DD1DA6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8AF9ADD726C1381200DD1DA6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8EFCB55426C6A6B20051C926 /* UICollectionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICollectionController.swift; sourceTree = "<group>"; };
 		9933B4830AB54860333A4E16 /* Pods-SwiftDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftDemo.debug.xcconfig"; path = "Target Support Files/Pods-SwiftDemo/Pods-SwiftDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		C9B66C5B325E4E29F045E229 /* Pods-SwiftDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftDemo.release.xcconfig"; path = "Target Support Files/Pods-SwiftDemo/Pods-SwiftDemo.release.xcconfig"; sourceTree = "<group>"; };
 		D8C383001B93D23BB8F0B781 /* Pods_SwiftDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwiftDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -69,6 +71,7 @@
 				8AF9ADCD26C1380F00DD1DA6 /* ViewController.swift */,
 				8AE6FD5C26C371E800517764 /* UIButtonController.swift */,
 				8A56E24826C676C10070F0F9 /* UILabelController.swift */,
+				8EFCB55426C6A6B20051C926 /* UICollectionController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -136,6 +139,7 @@
 		8AF9ADC826C1380F00DD1DA6 /* SwiftDemo */ = {
 			isa = PBXGroup;
 			children = (
+				8EFCB55626C6A6B70051C926 /* View */,
 				8A56E24726C66AE60070F0F9 /* Controller */,
 				8A56E24626C66AD30070F0F9 /* Tools */,
 				8AE6FD5626C3633400517764 /* Other */,
@@ -146,6 +150,13 @@
 				8AF9ADD726C1381200DD1DA6 /* Info.plist */,
 			);
 			path = SwiftDemo;
+			sourceTree = "<group>";
+		};
+		8EFCB55626C6A6B70051C926 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		94E58B91B301831305FB3F17 /* Frameworks */ = {
@@ -288,6 +299,7 @@
 				8AE6FD5D26C371E800517764 /* UIButtonController.swift in Sources */,
 				8AD340D226C2520A001C0574 /* SensitiveWordFiltration.swift in Sources */,
 				8AF9ADCC26C1380F00DD1DA6 /* SceneDelegate.swift in Sources */,
+				8EFCB55526C6A6B20051C926 /* UICollectionController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
