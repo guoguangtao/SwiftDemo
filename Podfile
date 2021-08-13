@@ -8,6 +8,7 @@ target 'SwiftDemo' do
   # Pods for SwiftDemo
   pod 'Kingfisher'
   pod 'SnapKit'
+  pod 'Then'
   
 
 end

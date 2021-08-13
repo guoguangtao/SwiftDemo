@@ -76,10 +76,10 @@ class UILabelController: UIViewController {
     // MARK: - Constraints
     
     func setupConstraints() -> Void {
-        label.snp.makeConstraints { make in
-            make.left.equalTo(self.view).offset(10)
-            make.right.equalTo(self.view).offset(-10)
-            make.centerY.equalTo(self.view)
-        }
+        label.snp.makeConstraints({
+            $0.left.greaterThanOrEqualToSuperview().offset(20)
+            $0.right.lessThanOrEqualToSuperview().offset(-20)
+            $0.centerY.centerX.equalToSuperview()
+        })
     }
 }
