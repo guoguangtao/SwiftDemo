@@ -25,7 +25,8 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     private lazy var dataSources: [YXCItemModel] = {
         var array: [YXCItemModel] = [
             YXCItemModel(titleString: "UIButton", pushViewController: "UIButtonController", parameter: nil),
-            YXCItemModel(titleString: "UILabel", pushViewController: "UILabelController", parameter: nil)
+            YXCItemModel(titleString: "UILabel", pushViewController: "UILabelController", parameter: nil),
+            YXCItemModel(titleString: "UICollectionView", pushViewController: "UICollectionController", parameter: nil)
         ]
         return array
     }()
