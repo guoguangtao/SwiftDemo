@@ -14,7 +14,18 @@ class YXCCollectionViewCell: UICollectionViewCell {
         $0.font = UIFont.systemFont(ofSize: 20, weight: UIFont.Weight.heavy)
     }
     
-    public var indexPath: NSInteger = -1
+    private var index = -1
+    
+    public var indexPath: NSInteger {
+        set {
+            if index < 0 {
+                index = newValue
+            }
+        }
+        get {
+            index
+        }
+    }
     
     public var textString: String? {
         set {
@@ -37,7 +48,7 @@ class YXCCollectionViewCell: UICollectionViewCell {
     }
     
     deinit {
-        print("\(self.indexPath) 被释放")
+        print("\(self.index) 被释放")
     }
     
     func setupUI() {
