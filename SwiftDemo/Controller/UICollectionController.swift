@@ -24,7 +24,7 @@ class UICollectionController: UIViewController, UICollectionViewDataSource, UICo
         layout.minimumLineSpacing = minimumLineSpacing
         layout.minimumInteritemSpacing = minimumInteritemSpacing
         let  collectionView = UICollectionView(frame: CGRectZero, collectionViewLayout: layout)
-        collectionView.register(YXCCollectionViewCell.self, forCellWithReuseIdentifier: "Cell")
+        YXCCollectionViewCell.yxc_registerCell(collectionView)
         collectionView.backgroundColor = UIColor.systemBackground
         
         return collectionView
@@ -64,7 +64,7 @@ class UICollectionController: UIViewController, UICollectionViewDataSource, UICo
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell: YXCCollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! YXCCollectionViewCell
+        let cell: YXCCollectionViewCell = YXCCollectionViewCell.yxc_dequeueReusableCell(collectionView: collectionView, indexPath: indexPath)
         cell.textString = "\(indexPath.row)"
         cell.indexPath = indexPath.row + 1
         return cell

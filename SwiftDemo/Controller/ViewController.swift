@@ -17,7 +17,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         tableView.backgroundColor = UIColor.systemBackground
         tableView.dataSource = self
         tableView.delegate = self
-        tableView.register(YXCTableViewCell.self, forCellReuseIdentifier: "Cell")
+        YXCTableViewCell.yxc_registerCell(tableView)
         
         return tableView
     }()
@@ -69,7 +69,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell: YXCTableViewCell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! YXCTableViewCell
+        let cell: YXCTableViewCell = YXCTableViewCell.yxc_dequeueReusableCell(tableView: tableView, indexPath: indexPath)
         cell.titleString = self.dataSources[indexPath.row].titleString
         return cell
     }
