@@ -27,6 +27,7 @@ class YXCCollectionViewCell: UICollectionViewCell {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
+        contentView.backgroundColor = UIColor(red: CGFloat(arc4random_uniform(255)) / 255.0, green: CGFloat(arc4random_uniform(255)) / 255.0, blue: CGFloat(arc4random_uniform(255)) / 255.0, alpha: 1.0)
         setupUI()
         setupConstraints()
     }
@@ -41,7 +42,7 @@ class YXCCollectionViewCell: UICollectionViewCell {
     
     func setupUI() {
         
-        contentView.layer.cornerRadius = 20.0
+        contentView.layer.cornerRadius = 8.0
         contentView.layer.masksToBounds = true
         
         contentView.addSubview(textLabel)
@@ -51,5 +52,11 @@ class YXCCollectionViewCell: UICollectionViewCell {
         textLabel.snp.makeConstraints {
             $0.center.equalToSuperview()
         }
+    }
+    
+    @objc func injected() {
+        
+        setupUI()
+        setupConstraints()
     }
 }

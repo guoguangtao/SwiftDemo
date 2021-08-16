@@ -13,14 +13,16 @@ class UICollectionController: UIViewController, UICollectionViewDataSource, UICo
     let collectionView: UICollectionView = {
         let CGRectZero = CGRect(x: 0, y: 0, width: 0, height: 0)
         let layout = UICollectionViewFlowLayout()
-        let gap: CGFloat = 1.0
-        let count: CGFloat = 3.0
+        let minimumLineSpacing: CGFloat = 10.0
+        let minimumInteritemSpacing: CGFloat = 5.0
+        let count: CGFloat = 4.0
         let sectionInset: UIEdgeInsets = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
-        let itemWH: CGFloat = (UIScreen.main.bounds.size.width - (count - 1) * gap - sectionInset.left - sectionInset.right) / count
+        var width = UIScreen.main.bounds.size.width - (count - 1.0) * minimumInteritemSpacing - sectionInset.left - sectionInset.right
+        let itemWH: CGFloat = CGFloat(floor(Double(width / count)))
         layout.itemSize = CGSize(width: itemWH, height: itemWH)
         layout.sectionInset = sectionInset
-        layout.minimumLineSpacing = gap
-        layout.minimumInteritemSpacing = gap
+        layout.minimumLineSpacing = minimumLineSpacing
+        layout.minimumInteritemSpacing = minimumInteritemSpacing
         let  collectionView = UICollectionView(frame: CGRectZero, collectionViewLayout: layout)
         collectionView.register(YXCCollectionViewCell.self, forCellWithReuseIdentifier: "Cell")
         collectionView.backgroundColor = UIColor.systemBackground
@@ -63,7 +65,6 @@ class UICollectionController: UIViewController, UICollectionViewDataSource, UICo
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell: YXCCollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! YXCCollectionViewCell
-        cell.contentView.backgroundColor = UIColor.systemRed
         cell.textString = "\(indexPath.row)"
         cell.indexPath = indexPath.row + 1
         return cell
