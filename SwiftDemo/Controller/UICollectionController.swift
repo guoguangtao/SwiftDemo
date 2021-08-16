@@ -64,7 +64,8 @@ class UICollectionController: UIViewController, UICollectionViewDataSource, UICo
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell: YXCCollectionViewCell = YXCCollectionViewCell.yxc_dequeueReusableCell(collectionView: collectionView, indexPath: indexPath)
+        let cell: YXCCollectionViewCell = YXCCollectionViewCell.yxc_dequeueReusableCell(forCollectionView: collectionView,
+                                                                                        atIndexPath: indexPath)
         cell.textString = "\(indexPath.row)"
         cell.indexPath = indexPath.row + 1
         return cell

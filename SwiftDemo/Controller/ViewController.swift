@@ -69,7 +69,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell: YXCTableViewCell = YXCTableViewCell.yxc_dequeueReusableCell(tableView: tableView, indexPath: indexPath)
+        let cell: YXCTableViewCell = YXCTableViewCell.yxc_dequeueReusableCell(forTableView: tableView, atIndexPath: indexPath)
         cell.titleString = self.dataSources[indexPath.row].titleString
         return cell
     }
