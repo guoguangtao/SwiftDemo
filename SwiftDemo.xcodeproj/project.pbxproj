@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8A56269526CB3ED800451386 /* YXCColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A56269426CB3ED800451386 /* YXCColorExtension.swift */; };
 		8A56E24926C676C10070F0F9 /* UILabelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A56E24826C676C10070F0F9 /* UILabelController.swift */; };
 		8AA9D76126CA01A90045644B /* YXCAttributedStringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AA9D76026CA01A90045644B /* YXCAttributedStringExtension.swift */; };
 		8AA9D76326CA5B2F0045644B /* YXCTestController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AA9D76226CA5B2F0045644B /* YXCTestController.swift */; };
@@ -28,6 +29,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8A56269426CB3ED800451386 /* YXCColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YXCColorExtension.swift; sourceTree = "<group>"; };
 		8A56E24826C676C10070F0F9 /* UILabelController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UILabelController.swift; sourceTree = "<group>"; };
 		8AA9D76026CA01A90045644B /* YXCAttributedStringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YXCAttributedStringExtension.swift; sourceTree = "<group>"; };
 		8AA9D76226CA5B2F0045644B /* YXCTestController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YXCTestController.swift; sourceTree = "<group>"; };
@@ -98,6 +100,7 @@
 			children = (
 				8AE6FD5226C360FC00517764 /* UIViewExtension.swift */,
 				8ECBF89226CAB412006F720D /* YXCCellExtension.swift */,
+				8A56269426CB3ED800451386 /* YXCColorExtension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -309,6 +312,7 @@
 				8AF9ADCE26C1380F00DD1DA6 /* ViewController.swift in Sources */,
 				8AE6FD5926C3641B00517764 /* StringExtension.swift in Sources */,
 				8AF9ADCA26C1380F00DD1DA6 /* AppDelegate.swift in Sources */,
+				8A56269526CB3ED800451386 /* YXCColorExtension.swift in Sources */,
 				8A56E24926C676C10070F0F9 /* UILabelController.swift in Sources */,
 				8AE6FD5D26C371E800517764 /* UIButtonController.swift in Sources */,
 				8AD340D226C2520A001C0574 /* SensitiveWordFiltration.swift in Sources */,
