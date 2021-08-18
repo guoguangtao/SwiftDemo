@@ -27,6 +27,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             YXCItemModel(titleString: "UIButton", pushViewController: "UIButtonController", parameter: nil),
             YXCItemModel(titleString: "UILabel", pushViewController: "UILabelController", parameter: nil),
             YXCItemModel(titleString: "UICollectionView", pushViewController: "UICollectionController", parameter: nil),
+            YXCItemModel(titleString: "UITextField", pushViewController: "UITextFieldController", parameter: nil),
             YXCItemModel(titleString: "测试界面", pushViewController: "YXCTestController", parameter: nil)
         ]
         return array
