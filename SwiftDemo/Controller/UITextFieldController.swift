@@ -7,14 +7,17 @@
 
 import UIKit
 
-class UITextFieldController: UIViewController {
+class UITextFieldController: UIViewController, YXCTextFieldDelegate {
+    
 
     // MARK: - Property
     let textField = UITextField().then {
         $0.font = .systemFont(ofSize: 18, weight: .regular)
-        $0.textColor = .systemOrange
+        $0.textColor = .init(rgbHex: 0xFF0000)
         $0.borderStyle = .roundedRect
         $0.backgroundColor = .systemGray
+        $0.yxc_textMaxLength = 10
+        $0.yxc_textMaxLength = 5
     }
     
     // MARK: - Lazy
@@ -45,10 +48,17 @@ class UITextFieldController: UIViewController {
     
     // MARK: - Procotol
     
+    // MARK: YXCTextFieldDelegate
+     
+    func yxc_textDidChanged(textField: UITextField, text: String?) {
+        print("text: \(text ?? ""), textMaxLength: \(textField.yxc_textMaxLength)")
+    }
+    
     // MARK: - UI
     func setupUI() {
         
         self.view.addSubview(textField)
+        textField.yxc_delegate = self
     }
     
     // MARK: - Constraints
