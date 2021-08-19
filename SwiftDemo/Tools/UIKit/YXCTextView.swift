@@ -12,6 +12,8 @@ class YXCTextView: UITextView {
     /// 代理
     weak var yxc_delegate: YXCTextViewDelegate?
     
+    var yxc_textDidChangedCallBack: ((YXCTextView, String) -> Void)?
+    
     deinit {
         yxc_debugPrintf("YXCTextView 被释放")
         NotificationCenter.default.removeObserver(self)
@@ -178,6 +180,7 @@ extension YXCTextView {
         }
         
         yxc_delegate?.yxc_textDidChanged(textView: self, text: text)
+        yxc_textDidChangedCallBack?(self, text)
     }
     
     /// textView 文本开始编辑通知
