@@ -15,7 +15,7 @@ class UICollectionController: UIViewController, UICollectionViewDataSource, UICo
         let layout = UICollectionViewFlowLayout()
         let minimumLineSpacing: CGFloat = 10.0
         let minimumInteritemSpacing: CGFloat = 5.0
-        let count: CGFloat = 4.0
+        let count: CGFloat = 2.0
         let sectionInset: UIEdgeInsets = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
         var width = UIScreen.main.bounds.size.width - (count - 1.0) * minimumInteritemSpacing - sectionInset.left - sectionInset.right
         let itemWH: CGFloat = CGFloat(floor(Double(width / count)))
@@ -67,7 +67,6 @@ class UICollectionController: UIViewController, UICollectionViewDataSource, UICo
         let cell: YXCCollectionViewCell = YXCCollectionViewCell.yxc_dequeueReusableCell(forCollectionView: collectionView,
                                                                                         atIndexPath: indexPath)
         cell.textString = "\(indexPath.row)"
-        cell.indexPath = indexPath.row + 1
         return cell
     }
     

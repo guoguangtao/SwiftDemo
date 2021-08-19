@@ -28,7 +28,6 @@ class YXCTestController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        self.navigationController?.setNavigationBarHidden(true, animated: true)
         self.view.backgroundColor = UIColor.white
         
         setupUI()

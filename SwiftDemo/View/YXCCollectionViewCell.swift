@@ -9,23 +9,14 @@ import UIKit
 
 class YXCCollectionViewCell: UICollectionViewCell {
     
+    private static var count: Int = 0
+    
     private let textLabel = UILabel().then {
         $0.textColor = UIColor.systemOrange
         $0.font = UIFont.systemFont(ofSize: 20, weight: UIFont.Weight.heavy)
     }
     
     private var index = -1
-    
-    public var indexPath: NSInteger {
-        set {
-            if index < 0 {
-                index = newValue
-            }
-        }
-        get {
-            index
-        }
-    }
     
     public var textString: String? {
         set {
@@ -38,6 +29,9 @@ class YXCCollectionViewCell: UICollectionViewCell {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
+        Self.count += 1
+        index = Self.count
+        print("创建第\(Self.count)个 Cell")
         contentView.backgroundColor = .yxc_randomColor
         setupUI()
         setupConstraints()
@@ -48,7 +42,8 @@ class YXCCollectionViewCell: UICollectionViewCell {
     }
     
     deinit {
-        print("\(self.index) 被释放")
+        print("\(index) 被释放")
+        Self.count -= 1
     }
     
     func setupUI() {
