@@ -73,7 +73,7 @@ class UICollectionController: UIViewController, UICollectionViewDataSource, UICo
     // MARK: UICollectionViewDelegate
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        print("第 \(indexPath.row) 被点击")
+        yxc_debugPrintf("第 \(indexPath.row) 被点击")
     }
     
     // MARK: - UI

@@ -16,14 +16,14 @@ extension YXCTextFieldDelegate {
     
     func yxc_textDidChanged(textField: YXCTextField, text: String?) {
         
-        print("text: \(text ?? ""), textMaxLength: \(textField.yxc_textMaxLength)")
+        yxc_debugPrintf("text: \(text ?? ""), textMaxLength: \(textField.yxc_textMaxLength)")
     }
 }
 
 class YXCTextField: UITextField {
     
     deinit {
-        print("TextField 被释放")
+        yxc_debugPrintf("TextField 被释放")
         NotificationCenter.default.removeObserver(self)
     }
 }

@@ -49,7 +49,7 @@ class UIButtonController: UIViewController {
     
     @objc func buttonClicked(button: UIButton) {
         
-        print(button.currentTitle ?? "标题未获取到")
+        yxc_debugPrintf(button.currentTitle ?? "标题未获取到")
     }
     
     

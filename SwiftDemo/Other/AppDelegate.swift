@@ -21,11 +21,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             if let bundle = injectionBundle{
                 try bundle.loadAndReturnError()
             }else{
-                debugPrint("Injection注入失败,未能检测到Injection")
+                yxc_debugPrintf("Injection注入失败,未能检测到Injection")
             }
             
         } catch{
-            debugPrint("Injection注入失败\(error)")
+            yxc_debugPrintf("Injection注入失败\(error)")
         }
         #endif
         

@@ -31,7 +31,7 @@ class YXCCollectionViewCell: UICollectionViewCell {
         super.init(frame: frame)
         Self.count += 1
         index = Self.count
-        print("创建第\(Self.count)个 Cell")
+        yxc_debugPrintf("创建第\(Self.count)个 Cell")
         contentView.backgroundColor = .yxc_randomColor
         setupUI()
         setupConstraints()
@@ -42,7 +42,7 @@ class YXCCollectionViewCell: UICollectionViewCell {
     }
     
     deinit {
-        print("\(index) 被释放")
+        yxc_debugPrintf("\(index) 被释放")
         Self.count -= 1
     }
     

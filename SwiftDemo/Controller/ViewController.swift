@@ -81,17 +81,17 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         tableView.deselectRow(at: indexPath, animated: true)
         
         guard let nameSpace = Bundle.main.infoDictionary!["CFBundleExecutable"] as? String else {
-            print("没有获取到命名空间")
+            yxc_debugPrintf("没有获取到命名空间")
             return
         }
         let model: YXCItemModel = self.dataSources[indexPath.row]
         guard let controller: AnyObject.Type = NSClassFromString("\(nameSpace).\(model.pushViewController)")  else {
-            print("没有获取到类")
+            yxc_debugPrintf("没有获取到类")
             return
         }
         
         guard let vc = controller as? UIViewController.Type  else {
-            print("不是 UIViewController")
+            yxc_debugPrintf("不是 UIViewController")
             return
         }
         

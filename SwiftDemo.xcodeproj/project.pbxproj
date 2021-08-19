@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		8A465EEC26CDEC6000377D51 /* YXCTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A465EEB26CDEC6000377D51 /* YXCTextField.swift */; };
+		8A465EEE26CE4B9100377D51 /* YXCGlobalDefine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A465EED26CE4B9100377D51 /* YXCGlobalDefine.swift */; };
 		8A56269526CB3ED800451386 /* YXCColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A56269426CB3ED800451386 /* YXCColorExtension.swift */; };
 		8A56E24926C676C10070F0F9 /* UILabelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A56E24826C676C10070F0F9 /* UILabelController.swift */; };
 		8AA9D76126CA01A90045644B /* YXCAttributedStringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AA9D76026CA01A90045644B /* YXCAttributedStringExtension.swift */; };
@@ -32,6 +33,7 @@
 
 /* Begin PBXFileReference section */
 		8A465EEB26CDEC6000377D51 /* YXCTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YXCTextField.swift; sourceTree = "<group>"; };
+		8A465EED26CE4B9100377D51 /* YXCGlobalDefine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YXCGlobalDefine.swift; sourceTree = "<group>"; };
 		8A56269426CB3ED800451386 /* YXCColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YXCColorExtension.swift; sourceTree = "<group>"; };
 		8A56E24826C676C10070F0F9 /* UILabelController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UILabelController.swift; sourceTree = "<group>"; };
 		8AA9D76026CA01A90045644B /* YXCAttributedStringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YXCAttributedStringExtension.swift; sourceTree = "<group>"; };
@@ -123,6 +125,7 @@
 		8AE6FD5726C363FF00517764 /* Foundation */ = {
 			isa = PBXGroup;
 			children = (
+				8A465EED26CE4B9100377D51 /* YXCGlobalDefine.swift */,
 				8AD340D126C2520A001C0574 /* SensitiveWordFiltration.swift */,
 				8AE6FD5A26C3643E00517764 /* Extension */,
 			);
@@ -315,6 +318,7 @@
 				8A465EEC26CDEC6000377D51 /* YXCTextField.swift in Sources */,
 				8E1A850C26CD58C200120C4A /* UITextFieldController.swift in Sources */,
 				8AE6FD5326C360FD00517764 /* UIViewExtension.swift in Sources */,
+				8A465EEE26CE4B9100377D51 /* YXCGlobalDefine.swift in Sources */,
 				8E56F5E426C96EA00092F17A /* YXCCollectionViewCell.swift in Sources */,
 				8AA9D76326CA5B2F0045644B /* YXCTestController.swift in Sources */,
 				8AF9ADCE26C1380F00DD1DA6 /* ViewController.swift in Sources */,

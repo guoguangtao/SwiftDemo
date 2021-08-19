@@ -60,7 +60,7 @@ class UITextFieldController: UIViewController, YXCTextFieldDelegate {
     // MARK: YXCTextFieldDelegate
      
     func yxc_textDidChanged(textField: YXCTextField, text: String?) {
-        print("---text: \(text ?? "")")
+        yxc_debugPrintf("---text: \(text ?? "")")
     }
     
     // MARK: - UI
