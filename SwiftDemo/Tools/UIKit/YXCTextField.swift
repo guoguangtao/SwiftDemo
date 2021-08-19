@@ -24,19 +24,11 @@ class YXCTextField: UITextField {
     
     deinit {
         print("TextField 被释放")
+        NotificationCenter.default.removeObserver(self)
     }
 }
 
 extension YXCTextField {
-    
-    public convenience init(frame: CGRect, textMaxLength: Int) {
-        self.init(frame: frame)
-        yxc_textMaxLength = textMaxLength
-    }
-    
-    private struct YXCNotificationFlag {
-        var didAddTextDidChangeNotification: Int8
-    }
     
     /// 关于运行时的一些 key 的定义
     private struct RuntimeKey {
@@ -49,6 +41,26 @@ extension YXCTextField {
         
         /// 设置 yxc_delegate key
         static let yxc_delegateKey = UnsafeRawPointer.init(bitPattern: "yxc_delegate".hash)!
+        
+        /// 设置 当前 TextField 是否使用系统键盘 key
+        static let yxc_usingSystemKeyboardKey = UnsafeRawPointer.init(bitPattern: "yxc_usingSystemKeyboard".hash)!
+        
+        /// 全局是否禁用第三方键盘 key
+        static let yxc_globalUsingSystemKeyboardKey = UnsafeRawPointer.init(bitPattern: "yxc_globalUsingSystemKeyboard".hash)!
+        
+        /// 是否已经添加开始编辑通知监听 key
+        static let yxc_didAddtextDidBeginEditingNotificationKey = UnsafeRawPointer.init(bitPattern: "yxc_didAddtextDidBeginEditingNotification".hash)!
+        
+        /// 是否已经添加结束编辑通知监听 key
+        static let yxc_didAddTextDidEndEditingNotificationKey = UnsafeRawPointer.init(bitPattern: "yxc_didAddTextDidEndEditingNotification".hash)!
+    }
+}
+
+extension YXCTextField {
+    
+    public convenience init(frame: CGRect, textMaxLength: Int) {
+        self.init(frame: frame)
+        yxc_textMaxLength = textMaxLength
     }
     
     /// 是否已经添加文本改变通知
@@ -70,7 +82,7 @@ extension YXCTextField {
         set {
             objc_setAssociatedObject(self, YXCTextField.RuntimeKey.yxc_textMaxLengthKey, newValue, objc_AssociationPolicy.OBJC_ASSOCIATION_RETAIN_NONATOMIC)
             if yxc_didAddTextDidChangeNotification == false {
-                NotificationCenter.default.addObserver(self, selector: #selector(yxc_textField_textDidChangeNotification), name: UITextField.textDidChangeNotification, object: self)
+                NotificationCenter.default.addObserver(self, selector: #selector(yxc_textField_textDidChangeNotification), name: YXCTextField.textDidChangeNotification, object: self)
                 yxc_didAddTextDidChangeNotification = true
             }
         }
@@ -98,7 +110,8 @@ extension YXCTextField {
         }
     }
     
-    @objc func yxc_textField_textDidChangeNotification () {
+    /// 文本发生改变通知监听
+    @objc private func yxc_textField_textDidChangeNotification () {
         
         if yxc_textMaxLength == NSNotFound {
             return
@@ -114,5 +127,88 @@ extension YXCTextField {
         }
         
         yxc_delegate?.yxc_textDidChanged(textField: self, text: text)
+    }
+}
+
+extension YXCTextField {
+    
+    /// 监听开始编辑通知
+    private var yxc_didAddtextDidBeginEditingNotification: Bool {
+        set {
+            objc_setAssociatedObject(self, YXCTextField.RuntimeKey.yxc_didAddtextDidBeginEditingNotificationKey, newValue, objc_AssociationPolicy.OBJC_ASSOCIATION_RETAIN_NONATOMIC)
+        }
+        get {
+            if let didAdd = objc_getAssociatedObject(self, YXCTextField.RuntimeKey.yxc_didAddtextDidBeginEditingNotificationKey) as? Bool {
+                return didAdd
+            } else {
+                return false
+            }
+        }
+    }
+    
+    /// 监听结束编辑通知
+    private var yxc_didAddTextDidEndEditingNotification: Bool {
+        set {
+            objc_setAssociatedObject(self, YXCTextField.RuntimeKey.yxc_didAddTextDidEndEditingNotificationKey, newValue, objc_AssociationPolicy.OBJC_ASSOCIATION_RETAIN_NONATOMIC)
+        }
+        get {
+            if let didAdd = objc_getAssociatedObject(self, YXCTextField.RuntimeKey.yxc_didAddTextDidEndEditingNotificationKey) as? Bool {
+                return didAdd
+            } else {
+                return false
+            }
+        }
+    }
+    
+    /// 是否使用系统键盘，禁用第三方键盘
+    var yxc_usingSystemKeyboard: Bool {
+        set {
+            objc_setAssociatedObject(self, YXCTextField.RuntimeKey.yxc_usingSystemKeyboardKey, newValue, objc_AssociationPolicy.OBJC_ASSOCIATION_RETAIN_NONATOMIC)
+            if yxc_didAddtextDidBeginEditingNotification == false {
+                NotificationCenter.default.addObserver(self, selector: #selector(yxc_textField_textDidBeginEditingNotification), name: YXCTextField.textDidBeginEditingNotification, object: self)
+                yxc_didAddtextDidBeginEditingNotification = true
+            }
+            if yxc_didAddTextDidEndEditingNotification == false {
+                NotificationCenter.default.addObserver(self, selector: #selector(yxc_textField_textDidEndEditingNotification), name: YXCTextField.textDidEndEditingNotification, object: self)
+                yxc_didAddTextDidEndEditingNotification = true
+            }
+        }
+        get {
+            if let usingSystemKeyboard = objc_getAssociatedObject(self, YXCTextField.RuntimeKey.yxc_usingSystemKeyboardKey) as? Bool {
+                return usingSystemKeyboard
+            }
+            return false
+        }
+    }
+    
+    /// 类属性 全局设置禁用第三方键盘标志
+    private static var yxc_globalUsingSystemKeyboard: Bool {
+        set {
+            objc_setAssociatedObject(self, YXCTextField.RuntimeKey.yxc_globalUsingSystemKeyboardKey, newValue, objc_AssociationPolicy.OBJC_ASSOCIATION_RETAIN_NONATOMIC)
+        }
+        get {
+            if let usingSystemKeyboard = objc_getAssociatedObject(self, YXCTextField.RuntimeKey.yxc_globalUsingSystemKeyboardKey) as? Bool {
+                return usingSystemKeyboard
+            }
+            return false
+        }
+    }
+    
+    @objc private func yxc_textField_textDidBeginEditingNotification() {
+        Self.yxc_globalUsingSystemKeyboard = self.yxc_usingSystemKeyboard
+    }
+    
+    @objc private func yxc_textField_textDidEndEditingNotification() {
+        Self.yxc_globalUsingSystemKeyboard = false
+    }
+    
+    @objc static public func yxc_shouldAllowExtensionPointIdentifier(extensionPointIdentifier: UIApplication.ExtensionPointIdentifier) -> Bool {
+        if extensionPointIdentifier.rawValue == "com.apple.keyboard-service" {
+            if yxc_globalUsingSystemKeyboard == true {
+                return false
+            }
+        }
+        
+        return true
     }
 }

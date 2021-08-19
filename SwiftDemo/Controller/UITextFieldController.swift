@@ -11,13 +11,22 @@ class UITextFieldController: UIViewController, YXCTextFieldDelegate {
     
 
     // MARK: - Property
-    let textField = YXCTextField().then {
+    let textField01 = YXCTextField().then {
         $0.font = .systemFont(ofSize: 18, weight: .regular)
-        $0.textColor = .init(rgbHex: 0xFF0000)
+        $0.textColor = .init(rgbHex: 0xFFFFFF)
         $0.borderStyle = .roundedRect
         $0.backgroundColor = .systemGray
         $0.yxc_textMaxLength = 10
-        $0.yxc_textMaxLength = 5
+        $0.yxc_usingSystemKeyboard = false
+    }
+    
+    let textField02 = YXCTextField().then {
+        $0.font = .systemFont(ofSize: 18, weight: .regular)
+        $0.textColor = .init(rgbHex: 0xFFFFFF)
+        $0.borderStyle = .roundedRect
+        $0.backgroundColor = .systemGray
+        $0.yxc_textMaxLength = 10
+        $0.yxc_usingSystemKeyboard = true
     }
     
     // MARK: - Lazy
@@ -57,18 +66,25 @@ class UITextFieldController: UIViewController, YXCTextFieldDelegate {
     // MARK: - UI
     func setupUI() {
         
-        self.view.addSubview(textField)
-        textField.yxc_delegate = self
+        self.view.addSubview(textField01)
+        textField01.yxc_delegate = self
+        
+        self.view.addSubview(textField02)
     }
     
     // MARK: - Constraints
     func setupConstraints() {
         
-        textField.snp.makeConstraints {
+        textField01.snp.makeConstraints {
             $0.centerY.equalToSuperview()
             $0.left.equalToSuperview().offset(20)
             $0.right.equalToSuperview().offset(-20)
             $0.height.equalTo(50)
+        }
+        
+        textField02.snp.makeConstraints {
+            $0.bottom.equalTo(textField01.snp_topMargin).offset(-20)
+            $0.left.right.height.equalTo(textField01)
         }
     }
 }
