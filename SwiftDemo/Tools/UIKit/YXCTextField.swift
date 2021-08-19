@@ -9,6 +9,10 @@ import UIKit
 
 protocol YXCTextFieldDelegate: NSObject {
     
+    /// 文本发生改变
+    /// - Parameters:
+    ///   - textField: 输入框
+    ///   - text: 当前输入框文本
     func yxc_textDidChanged(textField: YXCTextField, text: String?);
 }
 
@@ -55,6 +59,8 @@ extension YXCTextField {
         static let yxc_didAddTextDidEndEditingNotificationKey = UnsafeRawPointer.init(bitPattern: "yxc_didAddTextDidEndEditingNotification".hash)!
     }
 }
+
+// MARK: - YXCTextField 文本长度限制扩展
 
 extension YXCTextField {
     
@@ -109,26 +115,9 @@ extension YXCTextField {
             return nil
         }
     }
-    
-    /// 文本发生改变通知监听
-    @objc private func yxc_textField_textDidChangeNotification () {
-        
-        if yxc_textMaxLength == NSNotFound {
-            return
-        }
-        
-        if let selectedRange = markedTextRange, !selectedRange.isEmpty {
-            return
-        }
-        
-        let string = text
-        if let count = string?.count, count > yxc_textMaxLength {
-            text = string?.gyhs_subString(from: 0, to: yxc_textMaxLength - 1)
-        }
-        
-        yxc_delegate?.yxc_textDidChanged(textField: self, text: text)
-    }
 }
+
+// MARK: - YXCTextField 第三方键盘禁用扩展
 
 extension YXCTextField {
     
@@ -194,14 +183,7 @@ extension YXCTextField {
         }
     }
     
-    @objc private func yxc_textField_textDidBeginEditingNotification() {
-        Self.yxc_globalUsingSystemKeyboard = self.yxc_usingSystemKeyboard
-    }
-    
-    @objc private func yxc_textField_textDidEndEditingNotification() {
-        Self.yxc_globalUsingSystemKeyboard = false
-    }
-    
+    /// 设置是否禁用第三方键盘
     @objc static public func yxc_shouldAllowExtensionPointIdentifier(extensionPointIdentifier: UIApplication.ExtensionPointIdentifier) -> Bool {
         if extensionPointIdentifier.rawValue == "com.apple.keyboard-service" {
             if yxc_globalUsingSystemKeyboard == true {
@@ -210,5 +192,39 @@ extension YXCTextField {
         }
         
         return true
+    }
+}
+
+// MARK: - YXCTextField 通知监听
+
+extension YXCTextField {
+    
+    /// 开始编辑通知监听
+    @objc private func yxc_textField_textDidBeginEditingNotification() {
+        Self.yxc_globalUsingSystemKeyboard = self.yxc_usingSystemKeyboard
+    }
+    
+    /// 结束编辑通知监听
+    @objc private func yxc_textField_textDidEndEditingNotification() {
+        Self.yxc_globalUsingSystemKeyboard = false
+    }
+    
+    /// 文本发生改变通知监听
+    @objc private func yxc_textField_textDidChangeNotification () {
+        
+        if yxc_textMaxLength == NSNotFound {
+            return
+        }
+        
+        if let selectedRange = markedTextRange, !selectedRange.isEmpty {
+            return
+        }
+        
+        let string = text
+        if let count = string?.count, count > yxc_textMaxLength {
+            text = string?.gyhs_subString(from: 0, to: yxc_textMaxLength - 1)
+        }
+        
+        yxc_delegate?.yxc_textDidChanged(textField: self, text: text)
     }
 }
