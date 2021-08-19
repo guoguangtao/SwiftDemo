@@ -11,7 +11,7 @@ class UITextFieldController: UIViewController, YXCTextFieldDelegate {
     
 
     // MARK: - Property
-    let textField = UITextField().then {
+    let textField = YXCTextField().then {
         $0.font = .systemFont(ofSize: 18, weight: .regular)
         $0.textColor = .init(rgbHex: 0xFF0000)
         $0.borderStyle = .roundedRect
@@ -50,8 +50,8 @@ class UITextFieldController: UIViewController, YXCTextFieldDelegate {
     
     // MARK: YXCTextFieldDelegate
      
-    func yxc_textDidChanged(textField: UITextField, text: String?) {
-        print("text: \(text ?? ""), textMaxLength: \(textField.yxc_textMaxLength)")
+    func yxc_textDidChanged(textField: YXCTextField, text: String?) {
+        print("---text: \(text ?? "")")
     }
     
     // MARK: - UI

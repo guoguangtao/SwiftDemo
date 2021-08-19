@@ -9,10 +9,25 @@ import UIKit
 
 protocol YXCTextFieldDelegate: NSObject {
     
-    func yxc_textDidChanged(textField: UITextField, text: String?);
+    func yxc_textDidChanged(textField: YXCTextField, text: String?);
 }
 
-extension UITextField {
+extension YXCTextFieldDelegate {
+    
+    func yxc_textDidChanged(textField: YXCTextField, text: String?) {
+        
+        print("text: \(text ?? ""), textMaxLength: \(textField.yxc_textMaxLength)")
+    }
+}
+
+class YXCTextField: UITextField {
+    
+    deinit {
+        print("TextField 被释放")
+    }
+}
+
+extension YXCTextField {
     
     public convenience init(frame: CGRect, textMaxLength: Int) {
         self.init(frame: frame)
@@ -39,10 +54,10 @@ extension UITextField {
     /// 是否已经添加文本改变通知
     private var yxc_didAddTextDidChangeNotification: Bool {
         set {
-            objc_setAssociatedObject(self, UITextField.RuntimeKey.yxc_didAddTextDidChangeNotificationKey, newValue, objc_AssociationPolicy.OBJC_ASSOCIATION_RETAIN_NONATOMIC)
+            objc_setAssociatedObject(self, YXCTextField.RuntimeKey.yxc_didAddTextDidChangeNotificationKey, newValue, objc_AssociationPolicy.OBJC_ASSOCIATION_RETAIN_NONATOMIC)
         }
         get {
-            if let didAdd = objc_getAssociatedObject(self, UITextField.RuntimeKey.yxc_didAddTextDidChangeNotificationKey) as? Bool {
+            if let didAdd = objc_getAssociatedObject(self, YXCTextField.RuntimeKey.yxc_didAddTextDidChangeNotificationKey) as? Bool {
                 return didAdd
             } else {
                 return false
@@ -53,14 +68,14 @@ extension UITextField {
     /// UITextField 可输入最大长度
     var yxc_textMaxLength: Int {
         set {
-            objc_setAssociatedObject(self, UITextField.RuntimeKey.yxc_textMaxLengthKey, newValue, objc_AssociationPolicy.OBJC_ASSOCIATION_RETAIN_NONATOMIC)
+            objc_setAssociatedObject(self, YXCTextField.RuntimeKey.yxc_textMaxLengthKey, newValue, objc_AssociationPolicy.OBJC_ASSOCIATION_RETAIN_NONATOMIC)
             if yxc_didAddTextDidChangeNotification == false {
                 NotificationCenter.default.addObserver(self, selector: #selector(yxc_textField_textDidChangeNotification), name: UITextField.textDidChangeNotification, object: self)
                 yxc_didAddTextDidChangeNotification = true
             }
         }
         get {
-            let maxLength = objc_getAssociatedObject(self, UITextField.RuntimeKey.yxc_textMaxLengthKey) as! Int
+            let maxLength = objc_getAssociatedObject(self, YXCTextField.RuntimeKey.yxc_textMaxLengthKey) as! Int
             if maxLength > 0 {
                 return maxLength
             }
@@ -72,11 +87,11 @@ extension UITextField {
     weak var yxc_delegate: YXCTextFieldDelegate? {
         set {
             if newValue != nil {
-                objc_setAssociatedObject(self, UITextField.RuntimeKey.yxc_delegateKey, newValue, objc_AssociationPolicy.OBJC_ASSOCIATION_ASSIGN)
+                objc_setAssociatedObject(self, YXCTextField.RuntimeKey.yxc_delegateKey, newValue, objc_AssociationPolicy.OBJC_ASSOCIATION_ASSIGN)
             }
         }
         get {
-            if let yxc_dele = objc_getAssociatedObject(self, UITextField.RuntimeKey.yxc_delegateKey) as? YXCTextFieldDelegate {
+            if let yxc_dele = objc_getAssociatedObject(self, YXCTextField.RuntimeKey.yxc_delegateKey) as? YXCTextFieldDelegate {
                 return yxc_dele
             }
             return nil

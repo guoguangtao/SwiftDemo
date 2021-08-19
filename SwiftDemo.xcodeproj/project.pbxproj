@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		8A465EEC26CDEC6000377D51 /* YXCTextFieldExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A465EEB26CDEC6000377D51 /* YXCTextFieldExtension.swift */; };
+		8A465EEC26CDEC6000377D51 /* YXCTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A465EEB26CDEC6000377D51 /* YXCTextField.swift */; };
 		8A56269526CB3ED800451386 /* YXCColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A56269426CB3ED800451386 /* YXCColorExtension.swift */; };
 		8A56E24926C676C10070F0F9 /* UILabelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A56E24826C676C10070F0F9 /* UILabelController.swift */; };
 		8AA9D76126CA01A90045644B /* YXCAttributedStringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AA9D76026CA01A90045644B /* YXCAttributedStringExtension.swift */; };
@@ -31,7 +31,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		8A465EEB26CDEC6000377D51 /* YXCTextFieldExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YXCTextFieldExtension.swift; sourceTree = "<group>"; };
+		8A465EEB26CDEC6000377D51 /* YXCTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YXCTextField.swift; sourceTree = "<group>"; };
 		8A56269426CB3ED800451386 /* YXCColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YXCColorExtension.swift; sourceTree = "<group>"; };
 		8A56E24826C676C10070F0F9 /* UILabelController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UILabelController.swift; sourceTree = "<group>"; };
 		8AA9D76026CA01A90045644B /* YXCAttributedStringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YXCAttributedStringExtension.swift; sourceTree = "<group>"; };
@@ -95,6 +95,7 @@
 		8AE6FD5426C362F900517764 /* UIKit */ = {
 			isa = PBXGroup;
 			children = (
+				8A465EEB26CDEC6000377D51 /* YXCTextField.swift */,
 				8AE6FD5526C3630500517764 /* Extension */,
 			);
 			path = UIKit;
@@ -106,7 +107,6 @@
 				8AE6FD5226C360FC00517764 /* UIViewExtension.swift */,
 				8ECBF89226CAB412006F720D /* YXCCellExtension.swift */,
 				8A56269426CB3ED800451386 /* YXCColorExtension.swift */,
-				8A465EEB26CDEC6000377D51 /* YXCTextFieldExtension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -312,7 +312,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8A465EEC26CDEC6000377D51 /* YXCTextFieldExtension.swift in Sources */,
+				8A465EEC26CDEC6000377D51 /* YXCTextField.swift in Sources */,
 				8E1A850C26CD58C200120C4A /* UITextFieldController.swift in Sources */,
 				8AE6FD5326C360FD00517764 /* UIViewExtension.swift in Sources */,
 				8E56F5E426C96EA00092F17A /* YXCCollectionViewCell.swift in Sources */,
