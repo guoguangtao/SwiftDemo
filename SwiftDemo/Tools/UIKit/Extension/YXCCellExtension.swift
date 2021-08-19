@@ -20,9 +20,9 @@ extension UICollectionViewCell {
         collectionView.register(self.classForCoder(), forCellWithReuseIdentifier: self.yxc_identifier())
     }
     
-    ///  根据某个 CollectionView 从复用池中获取一个 Cell
+    /// 根据某个 CollectionView 从复用池中获取一个 Cell
     /// - Parameters:
-    ///   - collectionView: CollectionView
+    ///   - collectionView: collectionView
     ///   - indexPath: indexPath
     /// - Returns: cell
     static func yxc_dequeueReusableCell(forCollectionView collectionView: UICollectionView, atIndexPath indexPath: IndexPath) -> Self {
