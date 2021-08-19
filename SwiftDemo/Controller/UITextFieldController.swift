@@ -36,7 +36,7 @@ class UITextFieldController: UIViewController, YXCTextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.view.backgroundColor = .white
+        self.view.backgroundColor = .systemBackground
         
         setupUI()
         setupConstraints()

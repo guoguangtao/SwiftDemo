@@ -28,7 +28,7 @@ class UIButtonController: UIViewController {
         
         self.title = "UIButton 的使用"
         
-        self.view.backgroundColor = UIColor.white
+        self.view.backgroundColor = .systemBackground
         
         setupUI()
         setupConstraints()

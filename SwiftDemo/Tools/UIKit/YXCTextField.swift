@@ -7,7 +7,7 @@
 
 import UIKit
 
-protocol YXCTextFieldDelegate: NSObject {
+protocol YXCTextFieldDelegate: NSObjectProtocol {
     
     /// 文本发生改变
     /// - Parameters:
@@ -25,6 +25,8 @@ extension YXCTextFieldDelegate {
 }
 
 class YXCTextField: UITextField {
+    
+    weak var yxc_delegate: YXCTextFieldDelegate?
     
     deinit {
         yxc_debugPrintf("TextField 被释放")
@@ -69,20 +71,6 @@ extension YXCTextField {
         yxc_textMaxLength = textMaxLength
     }
     
-    /// 是否已经添加文本改变通知
-    private var yxc_didAddTextDidChangeNotification: Bool {
-        set {
-            objc_setAssociatedObject(self, YXCTextField.RuntimeKey.yxc_didAddTextDidChangeNotificationKey, newValue, objc_AssociationPolicy.OBJC_ASSOCIATION_RETAIN_NONATOMIC)
-        }
-        get {
-            if let didAdd = objc_getAssociatedObject(self, YXCTextField.RuntimeKey.yxc_didAddTextDidChangeNotificationKey) as? Bool {
-                return didAdd
-            } else {
-                return false
-            }
-        }
-    }
-    
     /// UITextField 可输入最大长度
     var yxc_textMaxLength: Int {
         set {
@@ -100,54 +88,11 @@ extension YXCTextField {
             return NSNotFound
         }
     }
-    
-    /// 代理
-    weak var yxc_delegate: YXCTextFieldDelegate? {
-        set {
-            if newValue != nil {
-                objc_setAssociatedObject(self, YXCTextField.RuntimeKey.yxc_delegateKey, newValue, objc_AssociationPolicy.OBJC_ASSOCIATION_ASSIGN)
-            }
-        }
-        get {
-            if let yxc_dele = objc_getAssociatedObject(self, YXCTextField.RuntimeKey.yxc_delegateKey) as? YXCTextFieldDelegate {
-                return yxc_dele
-            }
-            return nil
-        }
-    }
 }
 
 // MARK: - YXCTextField 第三方键盘禁用扩展
 
 extension YXCTextField {
-    
-    /// 监听开始编辑通知
-    private var yxc_didAddtextDidBeginEditingNotification: Bool {
-        set {
-            objc_setAssociatedObject(self, YXCTextField.RuntimeKey.yxc_didAddtextDidBeginEditingNotificationKey, newValue, objc_AssociationPolicy.OBJC_ASSOCIATION_RETAIN_NONATOMIC)
-        }
-        get {
-            if let didAdd = objc_getAssociatedObject(self, YXCTextField.RuntimeKey.yxc_didAddtextDidBeginEditingNotificationKey) as? Bool {
-                return didAdd
-            } else {
-                return false
-            }
-        }
-    }
-    
-    /// 监听结束编辑通知
-    private var yxc_didAddTextDidEndEditingNotification: Bool {
-        set {
-            objc_setAssociatedObject(self, YXCTextField.RuntimeKey.yxc_didAddTextDidEndEditingNotificationKey, newValue, objc_AssociationPolicy.OBJC_ASSOCIATION_RETAIN_NONATOMIC)
-        }
-        get {
-            if let didAdd = objc_getAssociatedObject(self, YXCTextField.RuntimeKey.yxc_didAddTextDidEndEditingNotificationKey) as? Bool {
-                return didAdd
-            } else {
-                return false
-            }
-        }
-    }
     
     /// 是否使用系统键盘，禁用第三方键盘
     var yxc_usingSystemKeyboard: Bool {
@@ -198,6 +143,48 @@ extension YXCTextField {
 // MARK: - YXCTextField 通知监听
 
 extension YXCTextField {
+    
+    /// 是否已经添加文本改变通知
+    private var yxc_didAddTextDidChangeNotification: Bool {
+        set {
+            objc_setAssociatedObject(self, YXCTextField.RuntimeKey.yxc_didAddTextDidChangeNotificationKey, newValue, objc_AssociationPolicy.OBJC_ASSOCIATION_RETAIN_NONATOMIC)
+        }
+        get {
+            if let didAdd = objc_getAssociatedObject(self, YXCTextField.RuntimeKey.yxc_didAddTextDidChangeNotificationKey) as? Bool {
+                return didAdd
+            } else {
+                return false
+            }
+        }
+    }
+    
+    /// 监听开始编辑通知
+    private var yxc_didAddtextDidBeginEditingNotification: Bool {
+        set {
+            objc_setAssociatedObject(self, YXCTextField.RuntimeKey.yxc_didAddtextDidBeginEditingNotificationKey, newValue, objc_AssociationPolicy.OBJC_ASSOCIATION_RETAIN_NONATOMIC)
+        }
+        get {
+            if let didAdd = objc_getAssociatedObject(self, YXCTextField.RuntimeKey.yxc_didAddtextDidBeginEditingNotificationKey) as? Bool {
+                return didAdd
+            } else {
+                return false
+            }
+        }
+    }
+    
+    /// 监听结束编辑通知
+    private var yxc_didAddTextDidEndEditingNotification: Bool {
+        set {
+            objc_setAssociatedObject(self, YXCTextField.RuntimeKey.yxc_didAddTextDidEndEditingNotificationKey, newValue, objc_AssociationPolicy.OBJC_ASSOCIATION_RETAIN_NONATOMIC)
+        }
+        get {
+            if let didAdd = objc_getAssociatedObject(self, YXCTextField.RuntimeKey.yxc_didAddTextDidEndEditingNotificationKey) as? Bool {
+                return didAdd
+            } else {
+                return false
+            }
+        }
+    }
     
     /// 开始编辑通知监听
     @objc private func yxc_textField_textDidBeginEditingNotification() {

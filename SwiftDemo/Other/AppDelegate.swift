@@ -47,7 +47,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func application(_ application: UIApplication, shouldAllowExtensionPointIdentifier extensionPointIdentifier: UIApplication.ExtensionPointIdentifier) -> Bool {
-        YXCTextField.yxc_shouldAllowExtensionPointIdentifier(extensionPointIdentifier: extensionPointIdentifier)
+        let textFieldResult = YXCTextField.yxc_shouldAllowExtensionPointIdentifier(extensionPointIdentifier: extensionPointIdentifier)
+        let textViewResult = YXCTextView.yxc_shouldAllowExtensionPointIdentifier(extensionPointIdentifier: extensionPointIdentifier)
+        
+        if textFieldResult == false || textViewResult == false {
+            return false
+        }
+        
+        return true
     }
 
 }
