@@ -28,6 +28,8 @@ class YXCTextField: UITextField {
     
     weak var yxc_delegate: YXCTextFieldDelegate?
     
+    public var yxc_textDidChangedCallBack: ((YXCTextField, String?) -> Void)?
+    
     deinit {
         yxc_debugPrintf("TextField 被释放")
         NotificationCenter.default.removeObserver(self)
@@ -213,5 +215,6 @@ extension YXCTextField {
         }
         
         yxc_delegate?.yxc_textDidChanged(textField: self, text: text)
+        yxc_textDidChangedCallBack?(self, text)
     }
 }

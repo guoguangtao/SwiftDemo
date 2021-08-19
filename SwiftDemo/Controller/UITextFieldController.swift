@@ -18,6 +18,10 @@ class UITextFieldController: UIViewController, YXCTextFieldDelegate {
         $0.backgroundColor = .systemGray
         $0.yxc_textMaxLength = 10
         $0.yxc_usingSystemKeyboard = false
+        $0.yxc_textDidChangedCallBack = {
+            (textField, text) in
+            yxc_debugPrintf("====text:\(text ?? "")")
+        }
     }
     
     let textField02 = YXCTextField().then {
