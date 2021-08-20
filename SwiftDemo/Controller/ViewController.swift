@@ -29,6 +29,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             YXCItemModel(titleString: "UICollectionView", pushViewController: "UICollectionController", parameter: nil),
             YXCItemModel(titleString: "UITextField", pushViewController: "UITextFieldController", parameter: nil),
             YXCItemModel(titleString: "UITextView", pushViewController: "UITextViewController", parameter: nil),
+            YXCItemModel(titleString: "UIImageView", pushViewController: "UIImageViewController", parameter: nil),
             YXCItemModel(titleString: "测试界面", pushViewController: "YXCTestController", parameter: nil)
         ]
         return array

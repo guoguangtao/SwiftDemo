@@ -28,6 +28,7 @@
 		8AF9ADD626C1381200DD1DA6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8AF9ADD426C1381200DD1DA6 /* LaunchScreen.storyboard */; };
 		8E1A850C26CD58C200120C4A /* UITextFieldController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E1A850B26CD58C200120C4A /* UITextFieldController.swift */; };
 		8E56F5E426C96EA00092F17A /* YXCCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E56F5E326C96EA00092F17A /* YXCCollectionViewCell.swift */; };
+		8E5FE01526CFFD9B0059F240 /* UIImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E5FE01426CFFD9B0059F240 /* UIImageViewController.swift */; };
 		8ECBF89326CAB412006F720D /* YXCCellExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ECBF89226CAB412006F720D /* YXCCellExtension.swift */; };
 		8EFCB55526C6A6B20051C926 /* UICollectionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EFCB55426C6A6B20051C926 /* UICollectionController.swift */; };
 		DA202EE65D03CBEAACF1CFF3 /* Pods_SwiftDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8C383001B93D23BB8F0B781 /* Pods_SwiftDemo.framework */; };
@@ -57,6 +58,7 @@
 		8AF9ADD726C1381200DD1DA6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8E1A850B26CD58C200120C4A /* UITextFieldController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextFieldController.swift; sourceTree = "<group>"; };
 		8E56F5E326C96EA00092F17A /* YXCCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YXCCollectionViewCell.swift; sourceTree = "<group>"; };
+		8E5FE01426CFFD9B0059F240 /* UIImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageViewController.swift; sourceTree = "<group>"; };
 		8ECBF89226CAB412006F720D /* YXCCellExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YXCCellExtension.swift; sourceTree = "<group>"; };
 		8EFCB55426C6A6B20051C926 /* UICollectionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICollectionController.swift; sourceTree = "<group>"; };
 		9933B4830AB54860333A4E16 /* Pods-SwiftDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftDemo.debug.xcconfig"; path = "Target Support Files/Pods-SwiftDemo/Pods-SwiftDemo.debug.xcconfig"; sourceTree = "<group>"; };
@@ -95,6 +97,7 @@
 				8E1A850B26CD58C200120C4A /* UITextFieldController.swift */,
 				8A465EF126CE5A5200377D51 /* UITextViewController.swift */,
 				8AA9D76226CA5B2F0045644B /* YXCTestController.swift */,
+				8E5FE01426CFFD9B0059F240 /* UIImageViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -327,6 +330,7 @@
 				8AE6FD5326C360FD00517764 /* UIViewExtension.swift in Sources */,
 				8A465EEE26CE4B9100377D51 /* YXCGlobalDefine.swift in Sources */,
 				8E56F5E426C96EA00092F17A /* YXCCollectionViewCell.swift in Sources */,
+				8E5FE01526CFFD9B0059F240 /* UIImageViewController.swift in Sources */,
 				8AA9D76326CA5B2F0045644B /* YXCTestController.swift in Sources */,
 				8AF9ADCE26C1380F00DD1DA6 /* ViewController.swift in Sources */,
 				8AE6FD5926C3641B00517764 /* StringExtension.swift in Sources */,
