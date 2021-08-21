@@ -9,6 +9,19 @@
 import UIKit
 import Moya
 
+class UserInfo: NSObject, Codable {
+    var name: String?
+    var age: Int?
+    
+    override var debugDescription: String {
+        "name:\(name ?? "nil"), age:\(age ?? 0)"
+    }
+    
+    override var description: String {
+        debugDescription
+    }
+}
+
 class YXCUseMoyaController: UIViewController {
 
     // MARK: - Property
@@ -18,6 +31,8 @@ class YXCUseMoyaController: UIViewController {
         $0.backgroundColor = .systemGray2
         $0.isEditable = false
     }
+    
+    let provider = MoyaProvider<HSECLiveShop>()
     
     
     // MARK: - 懒加载
@@ -33,6 +48,7 @@ class YXCUseMoyaController: UIViewController {
         setupUI()
         setupConstraints()
         requestData()
+        useNativeJson()
     }
     
     // MARK: - Custom Accessors (Setter 与 Getter 方法)
@@ -56,6 +72,50 @@ class YXCUseMoyaController: UIViewController {
     
     func requestData() {
         
+        provider.request(.thirdConfigs) { (result) in
+            switch result {
+            case .success(let response):
+                
+                // 将结果展示在 TextView
+                guard let jsonString = try? response.mapString() else {
+                    return
+                }
+                self.textView.text = jsonString
+                
+                guard let json = try? response.mapJSON() as? [String : Any?] else {
+                    return
+                }
+                print(json["retCode"])
+                
+            case .failure(let error):
+                print(error)
+            }
+        }
+    }
+    
+    /// 使用原生解析 Json
+    func useNativeJson() {
+        let jsonObject: [String : Any?] = [
+            "respCode" : 200,
+            "data" : [
+                "name" : "Bob",
+                "age" : 12
+            ]
+        ]
+        
+        guard let dataJson = jsonObject["data"] as? Dictionary<String, Any?> else {
+            return
+        }
+        
+        guard let data = try? JSONSerialization.data(withJSONObject: dataJson, options: .fragmentsAllowed) else {
+            return
+        }
+        
+        guard let userInfo = try? JSONDecoder().decode(UserInfo.self, from: data) else {
+            return
+        }
+        
+        print(userInfo)
     }
     
     
@@ -67,6 +127,8 @@ class YXCUseMoyaController: UIViewController {
     func setupUI() -> Void {
         
         self.view.addSubview(textView)
+        
+        
     }
     
     
@@ -78,4 +140,42 @@ class YXCUseMoyaController: UIViewController {
             $0.edges.equalToSuperview()
         }
     }
+}
+
+public enum HSECLiveShop {
+    case thirdConfigs
+}
+
+extension HSECLiveShop: TargetType {
+    public var baseURL: URL {
+        URL(string: "https://dc.aadv.net:10443/")!
+    }
+    
+    public var path: String {
+        switch self {
+        case .thirdConfigs:
+            return "mobile/reconsitution/config/getThirdConfigs"
+        }
+    }
+    
+    public var method: Moya.Method {
+        .get
+    }
+    
+    public var sampleData: Data {
+        switch self {
+        case .thirdConfigs:
+            return "请求 Data".data(using: String.Encoding.utf8)!
+        }
+    }
+    
+    public var task: Task {
+        .requestPlain
+    }
+    
+    public var headers: [String : String]? {
+        nil
+    }
+    
+    
 }
