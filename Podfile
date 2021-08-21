@@ -9,6 +9,7 @@ target 'SwiftDemo' do
   pod 'Kingfisher'
   pod 'SnapKit'
   pod 'Then'
+  pod 'Moya/RxSwift'
   
 
 end
