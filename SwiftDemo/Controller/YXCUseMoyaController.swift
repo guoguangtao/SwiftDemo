@@ -72,6 +72,39 @@ class YXCUseMoyaController: UIViewController {
     
     func requestData() {
         
+        requestDataByMoyaRxSwift()
+    }
+    
+    /// 使用 MoyaRXSwift 方式
+    func requestDataByMoyaRxSwift() {
+       let _ = provider.rx.request(.thirdConfigs).subscribe { event in
+            switch event {
+            case let .success(response):
+                // 将结果展示在 TextView
+                guard let jsonString = try? response.mapString() else {
+                    return
+                }
+                self.textView.text = jsonString
+                
+                guard let json = try? response.mapJSON() as? [String : Any?] else {
+                    return
+                }
+                
+                guard let retCode = json["retCode"] as? Int, retCode == 200 else {
+                    print("网络请求失败")
+                    return
+                }
+                
+                print("网络请求成功:\(retCode)")
+            case let .error(error):
+                print(error)
+            }
+        }
+    }
+    
+    /// 使用 Moya 请求
+    func requestDataByMoya() {
+        
         provider.request(.thirdConfigs) { (result) in
             switch result {
             case .success(let response):
@@ -85,7 +118,13 @@ class YXCUseMoyaController: UIViewController {
                 guard let json = try? response.mapJSON() as? [String : Any?] else {
                     return
                 }
-                print(json["retCode"])
+                
+                guard let retCode = json["retCode"] as? Int, retCode == 200 else {
+                    print("网络请求失败")
+                    return
+                }
+                
+                print("网络请求成功:\(retCode)")
                 
             case .failure(let error):
                 print(error)
