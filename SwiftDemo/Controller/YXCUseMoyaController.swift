@@ -48,7 +48,6 @@ class YXCUseMoyaController: UIViewController {
         setupUI()
         setupConstraints()
         requestData()
-        useNativeJson()
     }
     
     // MARK: - Custom Accessors (Setter 与 Getter 方法)
@@ -72,11 +71,27 @@ class YXCUseMoyaController: UIViewController {
     
     func requestData() {
         
-        requestDataByMoyaRxSwift()
+        requestDataByMoyaRxSwift_02()
+    }
+    
+    /// 使用 MoyaRxSwift
+    func requestDataByMoyaRxSwift_02() {
+        let _ = provider.rx.request(.thirdConfigs).mapJSON().subscribe { result in
+            switch result {
+            case let .success(response):
+                guard let dictionary = response as? [String : Any] else {
+                    print("非 字典")
+                    return
+                }
+                print("请求成功！！！\(dictionary["retCode"]!)")
+            case let .error(error):
+                print(error)
+            }
+        }
     }
     
     /// 使用 MoyaRXSwift 方式
-    func requestDataByMoyaRxSwift() {
+    func requestDataByMoyaRxSwift_01() {
        let _ = provider.rx.request(.thirdConfigs).subscribe { event in
             switch event {
             case let .success(response):
@@ -209,7 +224,7 @@ extension HSECLiveShop: TargetType {
     }
     
     public var task: Task {
-        .requestPlain
+        .requestParameters(parameters: ["name" : "Bob", "age" : "23"], encoding: URLEncoding.default)
     }
     
     public var headers: [String : String]? {

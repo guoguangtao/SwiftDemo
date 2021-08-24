@@ -16,17 +16,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         
         #if DEBUG
-        do{
-            let injectionBundle = Bundle.init(path: "/Applications/InjectionIII.app/Contents/Resources/iOSInjection.bundle")
-            if let bundle = injectionBundle{
-                try bundle.loadAndReturnError()
-            }else{
-                yxc_debugPrintf("Injection注入失败,未能检测到Injection")
-            }
-            
-        } catch{
-            yxc_debugPrintf("Injection注入失败\(error)")
-        }
+//        do{
+//            let injectionBundle = Bundle.init(path: "/Applications/InjectionIII.app/Contents/Resources/iOSInjection.bundle")
+//            if let bundle = injectionBundle{
+//                try bundle.loadAndReturnError()
+//            }else{
+//                yxc_debugPrintf("Injection注入失败,未能检测到Injection")
+//            }
+//            
+//        } catch{
+//            yxc_debugPrintf("Injection注入失败\(error)")
+//        }
         #endif
         
         return true
