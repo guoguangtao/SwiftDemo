@@ -27,6 +27,7 @@
 		8AF9ADD126C1380F00DD1DA6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8AF9ADCF26C1380F00DD1DA6 /* Main.storyboard */; };
 		8AF9ADD326C1381200DD1DA6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8AF9ADD226C1381200DD1DA6 /* Assets.xcassets */; };
 		8AF9ADD626C1381200DD1DA6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8AF9ADD426C1381200DD1DA6 /* LaunchScreen.storyboard */; };
+		8AFB04B426D4F37D007743FD /* YXCJsonParsingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AFB04B326D4F37D007743FD /* YXCJsonParsingController.swift */; };
 		8E1A850C26CD58C200120C4A /* UITextFieldController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E1A850B26CD58C200120C4A /* UITextFieldController.swift */; };
 		8E56F5E426C96EA00092F17A /* YXCCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E56F5E326C96EA00092F17A /* YXCCollectionViewCell.swift */; };
 		8E5FE01526CFFD9B0059F240 /* UIImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E5FE01426CFFD9B0059F240 /* UIImageViewController.swift */; };
@@ -58,6 +59,7 @@
 		8AF9ADD226C1381200DD1DA6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8AF9ADD526C1381200DD1DA6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8AF9ADD726C1381200DD1DA6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8AFB04B326D4F37D007743FD /* YXCJsonParsingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YXCJsonParsingController.swift; sourceTree = "<group>"; };
 		8E1A850B26CD58C200120C4A /* UITextFieldController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextFieldController.swift; sourceTree = "<group>"; };
 		8E56F5E326C96EA00092F17A /* YXCCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YXCCollectionViewCell.swift; sourceTree = "<group>"; };
 		8E5FE01426CFFD9B0059F240 /* UIImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageViewController.swift; sourceTree = "<group>"; };
@@ -101,6 +103,7 @@
 				8AA9D76226CA5B2F0045644B /* YXCTestController.swift */,
 				8E5FE01426CFFD9B0059F240 /* UIImageViewController.swift */,
 				8ACD1FDC26D09AC200772F4C /* YXCUseMoyaController.swift */,
+				8AFB04B326D4F37D007743FD /* YXCJsonParsingController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -346,6 +349,7 @@
 				8AE6FD5D26C371E800517764 /* UIButtonController.swift in Sources */,
 				8AD340D226C2520A001C0574 /* SensitiveWordFiltration.swift in Sources */,
 				8AA9D76126CA01A90045644B /* YXCAttributedStringExtension.swift in Sources */,
+				8AFB04B426D4F37D007743FD /* YXCJsonParsingController.swift in Sources */,
 				8A465EF226CE5A5200377D51 /* UITextViewController.swift in Sources */,
 				8AF9ADCC26C1380F00DD1DA6 /* SceneDelegate.swift in Sources */,
 				8ECBF89326CAB412006F720D /* YXCCellExtension.swift in Sources */,
