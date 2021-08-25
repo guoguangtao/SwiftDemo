@@ -197,6 +197,7 @@ class YXCUseMoyaController: UIViewController {
 }
 
 public enum HSECLiveShop {
+    // 获取第三方配置接口
     case thirdConfigs
 }
 

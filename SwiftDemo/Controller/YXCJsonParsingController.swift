@@ -21,22 +21,23 @@ class YXCJsonParsingController: UIViewController {
         
         self.view.backgroundColor = .systemBackground
         
-        let json = #"""
-            {
-                "id" : "1",
-                "name" : "Bob",
-                "age" : 20
-            }
-            """#
-        
-        let person = try? JSONDecoder().decode(YXCPerson.self, from: json.data(using: .utf8)!)
-        
         self.view.addSubview(label)
         label.snp.makeConstraints {
             $0.left.equalToSuperview().offset(20)
             $0.right.equalToSuperview().offset(-20)
             $0.centerY.equalToSuperview()
         }
+        
+        
+        let json = #"""
+            {
+                "id" : "1",
+                "name" : "Bob",
+                "age" : 12
+            }
+            """#
+        
+        let person = try? JSONDecoder().decode(YXCPerson.self, from: json.data(using: .utf8)!)
         
         label.text = person?.description
         
@@ -62,7 +63,15 @@ struct YXCPerson: Codable, CustomDebugStringConvertible, CustomStringConvertible
     }
     
     var debugDescription: String {
-        "Person"
+        "Person: name : \(name ?? "nil"), studentId : \(studentId ?? "nil"), age : \(age ?? "0")"
+    }
+    
+    init(from decoder: Decoder) throws {
+        let values = try decoder.container(keyedBy: CodingKeys.self)
+        name = try values.decode(String.self, forKey: .name)
+        age = try values.decode(String.self, forKey: .age)
+        studentId = try values.decode(String.self, forKey: .studentId)
+        print("name : \(name ?? "nil"), studentId : \(studentId ?? "nil"), age : \(age ?? "0")")
     }
     
     var description: String {
