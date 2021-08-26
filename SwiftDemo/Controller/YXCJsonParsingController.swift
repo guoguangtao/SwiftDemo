@@ -53,7 +53,7 @@ struct YXCPerson: Codable, CustomDebugStringConvertible, CustomStringConvertible
     let name: String?
     
     /// 年龄
-    let age: String?
+    let age: Int?
     
     /// 跟后台返回的键值不一致配置
     enum CodingKeys: String, CodingKey {
@@ -63,15 +63,14 @@ struct YXCPerson: Codable, CustomDebugStringConvertible, CustomStringConvertible
     }
     
     var debugDescription: String {
-        "Person: name : \(name ?? "nil"), studentId : \(studentId ?? "nil"), age : \(age ?? "0")"
+        "Person: name : \(name ?? "nil"), studentId : \(studentId ?? "nil"), age : \(age ?? 0)"
     }
     
     init(from decoder: Decoder) throws {
         let values = try decoder.container(keyedBy: CodingKeys.self)
         name = try values.decode(String.self, forKey: .name)
-        age = try values.decode(String.self, forKey: .age)
+        age = try values.decode(Int.self, forKey: .age)
         studentId = try values.decode(String.self, forKey: .studentId)
-        print("name : \(name ?? "nil"), studentId : \(studentId ?? "nil"), age : \(age ?? "0")")
     }
     
     var description: String {
