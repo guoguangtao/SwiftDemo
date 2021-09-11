@@ -78,7 +78,7 @@ class UILabelController: UIViewController {
         
         let attributedString = NSMutableAttributedString(string: "属性字符串", attributes: [
             NSAttributedString.Key.foregroundColor : UIColor.systemOrange,
-            NSAttributedString.Key.font : UIFont.systemFont(ofSize: 20, weight: UIFont.Weight.bold)
+            NSAttributedString.Key.font : UIFont.systemFont(ofSize: 20, weight: .bold)
         ])
         label.attributedText = attributedString
     }
