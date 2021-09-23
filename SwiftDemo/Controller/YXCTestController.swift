@@ -19,6 +19,10 @@ class YXCTestController: UIViewController {
         $0.backgroundColor = .systemBlue
     }
     
+    let orangeView = UIView().then {
+        $0.backgroundColor = .orange
+    }
+    
     
     // MARK: - 懒加载
     
@@ -76,6 +80,7 @@ class YXCTestController: UIViewController {
         
         view.addSubview(redView)
         view.addSubview(blueView)
+        view.addSubview(orangeView)
     }
     
     
@@ -95,6 +100,13 @@ class YXCTestController: UIViewController {
             $0.centerX.equalToSuperview().offset(-120)
             $0.top.equalToSuperview()
             $0.bottom.equalToSuperview()
+        }
+        
+        orangeView.snp.makeConstraints {
+            $0.width.equalTo(100)
+            $0.centerX.equalToSuperview().offset(120)
+            $0.top.equalTo(view.snp_topMargin)
+            $0.bottom.equalTo(view.snp_bottomMargin)
         }
     }
     
