@@ -121,8 +121,6 @@ class YXCActivityView: UIView {
             if subView.isKind(of: self) == true {
                 let activityView: YXCActivityView = subView as! YXCActivityView
                 activityView.pause()
-//                activityView.hide()
-//                activityView.removeFromSuperview()
             }
         }
     }

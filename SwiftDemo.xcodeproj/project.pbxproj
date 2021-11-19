@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		87814095274636BC00F95D8E /* YXCWKWebController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87814094274636BC00F95D8E /* YXCWKWebController.swift */; };
 		8793A924272905A900E4B3AD /* YXCCAReplicatorLayerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8793A923272905A900E4B3AD /* YXCCAReplicatorLayerController.swift */; };
 		8793A926272940A400E4B3AD /* YXCActivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8793A925272940A400E4B3AD /* YXCActivityView.swift */; };
 		8A202D3526D72DC600FFBC23 /* YXCSwityJsonController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A202D3426D72DC600FFBC23 /* YXCSwityJsonController.swift */; };
@@ -40,6 +41,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		87814094274636BC00F95D8E /* YXCWKWebController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YXCWKWebController.swift; sourceTree = "<group>"; };
 		8793A923272905A900E4B3AD /* YXCCAReplicatorLayerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YXCCAReplicatorLayerController.swift; sourceTree = "<group>"; };
 		8793A925272940A400E4B3AD /* YXCActivityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YXCActivityView.swift; sourceTree = "<group>"; };
 		8A202D3426D72DC600FFBC23 /* YXCSwityJsonController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YXCSwityJsonController.swift; sourceTree = "<group>"; };
@@ -112,6 +114,7 @@
 				8AFB04B326D4F37D007743FD /* YXCJsonParsingController.swift */,
 				8A202D3426D72DC600FFBC23 /* YXCSwityJsonController.swift */,
 				8793A923272905A900E4B3AD /* YXCCAReplicatorLayerController.swift */,
+				87814094274636BC00F95D8E /* YXCWKWebController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -350,6 +353,7 @@
 				8E56F5E426C96EA00092F17A /* YXCCollectionViewCell.swift in Sources */,
 				8E5FE01526CFFD9B0059F240 /* UIImageViewController.swift in Sources */,
 				8AA9D76326CA5B2F0045644B /* YXCTestController.swift in Sources */,
+				87814095274636BC00F95D8E /* YXCWKWebController.swift in Sources */,
 				8AF9ADCE26C1380F00DD1DA6 /* ViewController.swift in Sources */,
 				8AE6FD5926C3641B00517764 /* StringExtension.swift in Sources */,
 				8AF9ADCA26C1380F00DD1DA6 /* AppDelegate.swift in Sources */,
@@ -522,9 +526,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = T6K9Y5H6C4;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 7R34852FKA;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = SwiftDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -541,7 +545,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.yxc.SwiftDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = com_dev;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -553,9 +557,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = T6K9Y5H6C4;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = SwiftDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -563,7 +567,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.yxc.SwiftDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = com_dev;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};

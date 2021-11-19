@@ -70,8 +70,8 @@ class YXCCAReplicatorLayerController: UIViewController {
         let duration = 1.5
         
         let animation = CABasicAnimation(keyPath: "transform.scale")
-        animation.fromValue = 1.0
-        animation.toValue = 0.1
+        animation.fromValue = 0.5
+        animation.toValue = 0.0
         animation.duration = duration
         animation.repeatCount = Float.infinity
         calayer.add(animation, forKey: nil)
@@ -81,14 +81,12 @@ class YXCCAReplicatorLayerController: UIViewController {
         let angle = CGFloat(2 * Double.pi) / CGFloat(count)
         replicatorLayer.instanceTransform = CATransform3DMakeRotation(angle, 0, 0, 1.0)
         replicatorLayer.instanceDelay = duration / Double(count)
+        replicatorLayer.instanceColor = UIColor.red.cgColor
     }
     
     /// 加载动画
     private func activityIndicator_01() {
         let _ = YXCActivityView.show(inView: self.view)
-        DispatchQueue.main.asyncAfter(deadline: .now() + 10) {
-            YXCActivityView.hidden(fromView: self.view)
-        }
     }
     
     @objc func injected() {

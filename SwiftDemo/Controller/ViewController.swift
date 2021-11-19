@@ -34,7 +34,8 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             YXCItemModel(titleString: "原生解析 Json", pushViewController: "YXCJsonParsingController", parameter: nil),
             YXCItemModel(titleString: "SwityJson 使用", pushViewController: "YXCSwityJsonController", parameter: nil),
             YXCItemModel(titleString: "测试界面", pushViewController: "YXCTestController", parameter: nil),
-            YXCItemModel(titleString: "AReplicatorLayer的使用", pushViewController: "YXCCAReplicatorLayerController", parameter: nil)
+            YXCItemModel(titleString: "AReplicatorLayer的使用", pushViewController: "YXCCAReplicatorLayerController", parameter: nil),
+            YXCItemModel(titleString: "WKWebView 的使用", pushViewController: "YXCWKWebController", parameter: nil)
         ]
         return array
     }()
