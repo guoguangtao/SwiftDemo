@@ -7,9 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		873F31D92848B6B1001F99B9 /* YXCScreenToSwitchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 873F31D82848B6B1001F99B9 /* YXCScreenToSwitchController.swift */; };
+		873F31DD2848BB83001F99B9 /* YXCScreenToSwitchOCController.m in Sources */ = {isa = PBXBuildFile; fileRef = 873F31DC2848BB83001F99B9 /* YXCScreenToSwitchOCController.m */; };
+		876CD6BF282E7B6B00FB6689 /* LBScanQRCodeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 876CD6BB282E7B6B00FB6689 /* LBScanQRCodeController.swift */; };
+		876CD6C0282E7B6B00FB6689 /* LBScanView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 876CD6BE282E7B6B00FB6689 /* LBScanView.swift */; };
 		87814095274636BC00F95D8E /* YXCWKWebController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87814094274636BC00F95D8E /* YXCWKWebController.swift */; };
 		8793A924272905A900E4B3AD /* YXCCAReplicatorLayerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8793A923272905A900E4B3AD /* YXCCAReplicatorLayerController.swift */; };
 		8793A926272940A400E4B3AD /* YXCActivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8793A925272940A400E4B3AD /* YXCActivityView.swift */; };
+		87B224802832216800C4E89C /* LBScanTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87B2247F2832216800C4E89C /* LBScanTools.swift */; };
 		8A202D3526D72DC600FFBC23 /* YXCSwityJsonController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A202D3426D72DC600FFBC23 /* YXCSwityJsonController.swift */; };
 		8A465EEC26CDEC6000377D51 /* YXCTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A465EEB26CDEC6000377D51 /* YXCTextField.swift */; };
 		8A465EEE26CE4B9100377D51 /* YXCGlobalDefine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A465EED26CE4B9100377D51 /* YXCGlobalDefine.swift */; };
@@ -41,9 +46,16 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		873F31D82848B6B1001F99B9 /* YXCScreenToSwitchController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YXCScreenToSwitchController.swift; sourceTree = "<group>"; };
+		873F31DA2848BB83001F99B9 /* SwiftDemo-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SwiftDemo-Bridging-Header.h"; sourceTree = "<group>"; };
+		873F31DB2848BB83001F99B9 /* YXCScreenToSwitchOCController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YXCScreenToSwitchOCController.h; sourceTree = "<group>"; };
+		873F31DC2848BB83001F99B9 /* YXCScreenToSwitchOCController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YXCScreenToSwitchOCController.m; sourceTree = "<group>"; };
+		876CD6BB282E7B6B00FB6689 /* LBScanQRCodeController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LBScanQRCodeController.swift; sourceTree = "<group>"; };
+		876CD6BE282E7B6B00FB6689 /* LBScanView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LBScanView.swift; sourceTree = "<group>"; };
 		87814094274636BC00F95D8E /* YXCWKWebController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YXCWKWebController.swift; sourceTree = "<group>"; };
 		8793A923272905A900E4B3AD /* YXCCAReplicatorLayerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YXCCAReplicatorLayerController.swift; sourceTree = "<group>"; };
 		8793A925272940A400E4B3AD /* YXCActivityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YXCActivityView.swift; sourceTree = "<group>"; };
+		87B2247F2832216800C4E89C /* LBScanTools.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LBScanTools.swift; sourceTree = "<group>"; };
 		8A202D3426D72DC600FFBC23 /* YXCSwityJsonController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YXCSwityJsonController.swift; sourceTree = "<group>"; };
 		8A465EEB26CDEC6000377D51 /* YXCTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YXCTextField.swift; sourceTree = "<group>"; };
 		8A465EED26CE4B9100377D51 /* YXCGlobalDefine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YXCGlobalDefine.swift; sourceTree = "<group>"; };
@@ -90,6 +102,40 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		876CD6B9282E7B6B00FB6689 /* Scan */ = {
+			isa = PBXGroup;
+			children = (
+				876CD6BA282E7B6B00FB6689 /* Controller */,
+				876CD6BC282E7B6B00FB6689 /* Model */,
+				876CD6BD282E7B6B00FB6689 /* View */,
+			);
+			path = Scan;
+			sourceTree = "<group>";
+		};
+		876CD6BA282E7B6B00FB6689 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				876CD6BB282E7B6B00FB6689 /* LBScanQRCodeController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		876CD6BC282E7B6B00FB6689 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				87B2247F2832216800C4E89C /* LBScanTools.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		876CD6BD282E7B6B00FB6689 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				876CD6BE282E7B6B00FB6689 /* LBScanView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		8A56E24626C66AD30070F0F9 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
@@ -115,6 +161,10 @@
 				8A202D3426D72DC600FFBC23 /* YXCSwityJsonController.swift */,
 				8793A923272905A900E4B3AD /* YXCCAReplicatorLayerController.swift */,
 				87814094274636BC00F95D8E /* YXCWKWebController.swift */,
+				873F31D82848B6B1001F99B9 /* YXCScreenToSwitchController.swift */,
+				873F31DB2848BB83001F99B9 /* YXCScreenToSwitchOCController.h */,
+				873F31DC2848BB83001F99B9 /* YXCScreenToSwitchOCController.m */,
+				873F31DA2848BB83001F99B9 /* SwiftDemo-Bridging-Header.h */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -188,6 +238,7 @@
 		8AF9ADC826C1380F00DD1DA6 /* SwiftDemo */ = {
 			isa = PBXGroup;
 			children = (
+				876CD6B9282E7B6B00FB6689 /* Scan */,
 				8EFCB55626C6A6B70051C926 /* View */,
 				8A56E24726C66AE60070F0F9 /* Controller */,
 				8A56E24626C66AD30070F0F9 /* Tools */,
@@ -262,6 +313,7 @@
 				TargetAttributes = {
 					8AF9ADC526C1380F00DD1DA6 = {
 						CreatedOnToolsVersion = 12.5;
+						LastSwiftMigration = 1330;
 					};
 				};
 			};
@@ -347,10 +399,13 @@
 				8A465EF026CE5A3C00377D51 /* YXCTextView.swift in Sources */,
 				8A465EEC26CDEC6000377D51 /* YXCTextField.swift in Sources */,
 				8E1A850C26CD58C200120C4A /* UITextFieldController.swift in Sources */,
+				87B224802832216800C4E89C /* LBScanTools.swift in Sources */,
+				873F31D92848B6B1001F99B9 /* YXCScreenToSwitchController.swift in Sources */,
 				8AE6FD5326C360FD00517764 /* UIViewExtension.swift in Sources */,
 				8ACD1FDD26D09AC200772F4C /* YXCUseMoyaController.swift in Sources */,
 				8A465EEE26CE4B9100377D51 /* YXCGlobalDefine.swift in Sources */,
 				8E56F5E426C96EA00092F17A /* YXCCollectionViewCell.swift in Sources */,
+				873F31DD2848BB83001F99B9 /* YXCScreenToSwitchOCController.m in Sources */,
 				8E5FE01526CFFD9B0059F240 /* UIImageViewController.swift in Sources */,
 				8AA9D76326CA5B2F0045644B /* YXCTestController.swift in Sources */,
 				87814095274636BC00F95D8E /* YXCWKWebController.swift in Sources */,
@@ -364,7 +419,9 @@
 				8AE6FD5D26C371E800517764 /* UIButtonController.swift in Sources */,
 				8A202D3526D72DC600FFBC23 /* YXCSwityJsonController.swift in Sources */,
 				8AD340D226C2520A001C0574 /* SensitiveWordFiltration.swift in Sources */,
+				876CD6C0282E7B6B00FB6689 /* LBScanView.swift in Sources */,
 				8AA9D76126CA01A90045644B /* YXCAttributedStringExtension.swift in Sources */,
+				876CD6BF282E7B6B00FB6689 /* LBScanQRCodeController.swift in Sources */,
 				8AFB04B426D4F37D007743FD /* YXCJsonParsingController.swift in Sources */,
 				8A465EF226CE5A5200377D51 /* UITextViewController.swift in Sources */,
 				8AF9ADCC26C1380F00DD1DA6 /* SceneDelegate.swift in Sources */,
@@ -526,6 +583,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7R34852FKA;
@@ -546,6 +604,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.yxc.SwiftDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "SwiftDemo/Controller/SwiftDemo-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -557,6 +617,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = "";
@@ -568,6 +629,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.yxc.SwiftDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "SwiftDemo/Controller/SwiftDemo-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};

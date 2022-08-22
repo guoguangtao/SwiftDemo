@@ -35,7 +35,10 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             YXCItemModel(titleString: "SwityJson 使用", pushViewController: "YXCSwityJsonController", parameter: nil),
             YXCItemModel(titleString: "测试界面", pushViewController: "YXCTestController", parameter: nil),
             YXCItemModel(titleString: "AReplicatorLayer的使用", pushViewController: "YXCCAReplicatorLayerController", parameter: nil),
-            YXCItemModel(titleString: "WKWebView 的使用", pushViewController: "YXCWKWebController", parameter: nil)
+            YXCItemModel(titleString: "WKWebView 的使用", pushViewController: "YXCWKWebController", parameter: nil),
+            YXCItemModel(titleString: "扫描二维码", pushViewController: "LBScanQRCodeController", parameter: nil),
+            YXCItemModel(titleString: "横竖屏切换", pushViewController: "YXCScreenToSwitchController", parameter: nil),
+            YXCItemModel(titleString: "横竖屏切换 OC 版本", pushViewController: "YXCScreenToSwitchOCController", parameter: nil)
         ]
         return array
     }()
@@ -86,6 +89,12 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         tableView.deselectRow(at: indexPath, animated: true)
+        
+        if indexPath.row == 14 {
+            let controller = YXCScreenToSwitchOCController()
+            self.navigationController?.pushViewController(controller, animated: true)
+            return
+        }
         
         guard let nameSpace = Bundle.main.infoDictionary!["CFBundleExecutable"] as? String else {
             yxc_debugPrintf("没有获取到命名空间")

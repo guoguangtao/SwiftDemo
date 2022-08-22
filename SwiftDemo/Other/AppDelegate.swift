@@ -10,7 +10,16 @@ import UIKit
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-
+    var _allowRotation: NSInteger?
+    @objc var allowRotation: NSInteger {
+        set {
+            _allowRotation = newValue
+            _ = application(UIApplication.shared, supportedInterfaceOrientationsFor: nil)
+        }
+        get {
+            return _allowRotation ?? 0
+        }
+    }
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
@@ -55,6 +64,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         
         return true
+    }
+
+    func application(_ application: UIApplication, supportedInterfaceOrientationsFor window: UIWindow?) -> UIInterfaceOrientationMask {
+        print("supportedInterfaceOrientationsFor");
+        if (self.allowRotation == 1) {
+            return [.landscapeRight, .portrait, .landscapeLeft]
+        } else if (self.allowRotation == 2) {
+            return .landscapeRight
+        } else if (self.allowRotation == 3) {
+            return [.landscapeRight, .portrait]
+        } else if (self.allowRotation == 4) {
+            return .portrait;
+        }
+        return .portrait
     }
 
 }
