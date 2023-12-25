@@ -60,7 +60,7 @@ class YXCCAReplicatorLayerController: UIViewController {
         self.view.layer.addSublayer(replicatorLayer)
         
         let calayer = CALayer()
-        calayer.bounds = CGRect(x: 0, y: 0, width: 5, height: 5)
+        calayer.bounds = CGRect(x: 0, y: 0, width: 3, height: 3)
         calayer.position = CGPoint(x: 50, y: 20)
         calayer.backgroundColor = UIColor.white.cgColor
         calayer.cornerRadius = 2.5
@@ -70,18 +70,18 @@ class YXCCAReplicatorLayerController: UIViewController {
         let duration = 1.5
         
         let animation = CABasicAnimation(keyPath: "transform.scale")
-        animation.fromValue = 0.5
+        animation.fromValue = 1.0
         animation.toValue = 0.0
         animation.duration = duration
         animation.repeatCount = Float.infinity
         calayer.add(animation, forKey: nil)
         
-        let count = 100
+        let count = 200
         replicatorLayer.instanceCount = count;
         let angle = CGFloat(2 * Double.pi) / CGFloat(count)
         replicatorLayer.instanceTransform = CATransform3DMakeRotation(angle, 0, 0, 1.0)
         replicatorLayer.instanceDelay = duration / Double(count)
-        replicatorLayer.instanceColor = UIColor.red.cgColor
+        replicatorLayer.instanceColor = UIColor.white.cgColor
     }
     
     /// 加载动画
